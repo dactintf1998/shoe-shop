@@ -24,7 +24,7 @@ export default function ProductsPage() {
           </Link>
         </div>
       </section>
-
+      {/* reuse product list */}
       <section className="products-page__list">
         <div className="site-shell">
           <div className="products-page__grid">

@@ -5,7 +5,7 @@ import {
   getProductSlugs,
   getRelatedProducts,
 } from "@/lib/products";
-import { formatVnd } from "@/lib/format-vnd";
+import { formatVnd, formatUsd, formatEur } from "@/lib/format-vnd";
 
 export function generateStaticParams() {
   return getProductSlugs();
@@ -52,7 +52,6 @@ export default async function ProductDetailPage({ params }) {
             <p className="product-detail__eyebrow">Product detail</p>
             <h1>{product.name}</h1>
             <p className="product-detail__description">{product.description}</p>
-
             <div className="product-detail__price-row">
               <strong>{formatVnd(product.price)}</strong>
               {isSale ? (
@@ -61,11 +60,25 @@ export default async function ProductDetailPage({ params }) {
                 </span>
               ) : null}
             </div>
-
+            <div className="product-detail__price-row">
+              <strong>{formatUsd(product.price)}</strong>
+              {isSale ? (
+                <span className="product-detail__compare">
+                  {formatUsd(product.originalPrice)}
+                </span>
+              ) : null}
+            </div>
+            <div className="product-detail__price-row">
+              <strong>{formatEur(product.price)}</strong>
+              {isSale ? (
+                <span className="product-detail__compare">
+                  {formatEur(product.originalPrice)}
+                </span>
+              ) : null}
+            </div>
             <p
-              className={`product-detail__stock ${
-                product.inStock ? "" : "product-detail__stock--soldout"
-              }`}
+              className={`product-detail__stock ${product.inStock ? "" : "product-detail__stock--soldout"
+                }`}
             >
               {product.inStock ? "Còn hàng" : "Hết hàng"}
             </p>

@@ -252,6 +252,12 @@ select {
   margin-top: 14px;
 }
 
+.product-card__alt-prices {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .product-card__compare {
   color: var(--muted);
   text-decoration: line-through;
@@ -354,6 +360,12 @@ select {
   align-items: baseline;
   gap: 12px;
   margin-top: 18px;
+}
+
+.product-detail__alt-prices {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
 }
 
 .product-detail__compare {

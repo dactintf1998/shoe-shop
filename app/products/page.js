@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { products } from "@/lib/products";
+import { Why, Contact } from "@/lib/contact";
 
 export const metadata = {
   title: "MiniShop | Tất cả sản phẩm",
@@ -34,6 +35,8 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+      <Why />
+      <Contact />
     </main>
   );
 }

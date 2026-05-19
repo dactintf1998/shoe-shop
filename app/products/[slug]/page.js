@@ -6,6 +6,7 @@ import {
   getRelatedProducts,
 } from "@/lib/products";
 import { formatVnd, formatUsd, formatEur } from "@/lib/format-vnd";
+import { Why, Contact } from "@/lib/contact";
 
 export function generateStaticParams() {
   return getProductSlugs();
@@ -116,6 +117,8 @@ export default async function ProductDetailPage({ params }) {
             ))}
           </div>
         </div>
+        <Why />
+        <Contact />
       </section>
     </main>
   );

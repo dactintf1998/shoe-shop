@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatVnd, formatUsd, formatEur } from "@/lib/format-vnd";
+import { formatVnd } from "@/lib/format-vnd";
 
 export function ProductCard({ product }) {
   const isSale = Boolean(product.originalPrice);
@@ -32,26 +32,11 @@ export function ProductCard({ product }) {
               </span>
             ) : null}
           </div>
-          <div className="product-card__price-row">
-            <strong>{formatUsd(product.price)}</strong>
-            {isSale ? (
-              <span className="product-card__compare">
-                {formatUsd(product.originalPrice)}
-              </span>
-            ) : null}
-          </div>
-          <div className="product-card__price-row">
-            <strong>{formatEur(product.price)}</strong>
-            {isSale ? (
-              <span className="product-card__compare">
-                {formatEur(product.originalPrice)}
-              </span>
-            ) : null}
-          </div>
 
           <p
-            className={`product-card__stock ${isOutOfStock ? "product-card__stock--soldout" : ""
-              }`}
+            className={`product-card__stock ${
+              isOutOfStock ? "product-card__stock--soldout" : ""
+            }`}
           >
             {isOutOfStock ? "Hết hàng" : "Còn hàng"}
           </p>
